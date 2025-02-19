@@ -234,14 +234,14 @@ export function Card({
               </TouchableOpacity>
             </View>
 
-            <ScrollView contentContainerStyle={styles.scrollContainer}>
+            <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
               <View style={styles.tableList}>
                 <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>Nome: {project.name}</Text>
                 <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>Descrição: {project.description}</Text>
                 <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>Prioridade: {importance}</Text>
                 <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>Situação: {completed ? 'Finalizado' : 'Não finalizado'}</Text>
                 <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>Duração: de {formattedStartDate} até {formattedEndDate}</Text>
-                <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>Restam {remainingDays} dias.</Text>
+                <Text style={[styles.modalText, { color: COLORS.TEXT_PRIMARY }]}>{remainingDays <= 0 ? 'Prazo terminado' : `Restam ${remainingDays} dias.`}</Text>
               </View>
               {/* Gráfico de contribuição */}
               <MyCalendar contributionData={contributionData} tasks={tasks.filter(task => task.task.relatedProject === project.name)} />

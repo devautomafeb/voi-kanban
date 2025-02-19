@@ -96,7 +96,7 @@ export default function HomeScreen() {
             isSimplified={isSimplified}
           />
         )}
-        ListEmptyComponent={<ListEmpty message='Cadastre seu primeiro projeto.' />}
+        ListEmptyComponent={<ListEmpty message='Seus projetos serão listados aqui.' />}
         contentContainerStyle={{ paddingRight: 10, paddingLeft: 10 }}
         style={{ flex: 1, marginBottom:10,alignSelf: 'stretch' }}
       />

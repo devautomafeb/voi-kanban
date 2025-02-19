@@ -36,7 +36,7 @@ export const FormTask: React.FC<FormTaskProps> = ({ visible, onClose, task, onSa
         task: { ...formTask, relatedProject, recurringInterval },
       };
   
-      if (task.id) {
+      if (task) {
         // Se task já existir, editamos a tarefa
         editTask(newTask);
       } else {
